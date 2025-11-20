@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../assets/logo.png";
 import {
   LayoutDashboard,
   ShoppingCart,
@@ -50,18 +51,27 @@ const handleLogout = () => {
         isOpen ? "w-64" : "w-20"
       } bg-gray-900 text-gray-100 min-h-screen transition-all duration-300 flex flex-col`}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between p-4">
-        <h1 className={`text-xl font-bold text-amber-400 ${!isOpen && "hidden"}`}>
-          Everruchi
-        </h1>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-gray-300 hover:text-amber-400"
-        >
-          <Menu size={22} />
-        </button>
-      </div>
+      
+{/* Header */}
+<div className="flex items-center justify-between p-4">
+  <div className="flex items-center gap-2">
+    <img
+      src={logo}
+      alt="Ever Ruchi Logo"
+      className={`w-8 h-8 rounded-full object-cover ${!isOpen && "mx-auto"}`}
+    />
+    {isOpen && <h1 className="text-xl font-bold text-amber-400">Ever Ruchi</h1>}
+  </div>
+
+  <button
+    onClick={() => setIsOpen(!isOpen)}
+    className="text-gray-300 hover:text-amber-400"
+  >
+    <Menu size={22} />
+  </button>
+</div>
+
+
 
       {/* Navigation */}
       <nav className="flex-1">
@@ -298,14 +308,14 @@ const handleLogout = () => {
         <List size={16} /> {isOpen && "Order List"}
       </Link>
 
-      <Link
+  {/*    <Link
         to="/orders/add"
         className={`flex items-center gap-2 p-2 rounded-md hover:bg-gray-800 text-sm ${
           location.pathname === "/orders/add" ? "text-amber-400" : ""
         }`}
       >
         <PlusCircle size={16} /> {isOpen && "Add Order"}
-      </Link>
+      </Link> */}
     </div>
   )}
 </div>

@@ -29,12 +29,12 @@ export default function OrderList() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold text-gray-800">Order List</h2>
-        <button
+      {/* <button
           onClick={() => navigate("/orders/add")}
           className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg"
         >
           <Plus size={18} /> Add Order
-        </button>
+        </button> */}
       </div>
 
       {/* Table */}
